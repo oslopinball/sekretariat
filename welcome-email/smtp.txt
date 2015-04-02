@@ -1,0 +1,31 @@
+sudo apt-get install msmtp-mta
+
+vim ~/.msmtprc
+
+#Gmail account
+defaults
+logfile ~/msmtp.log
+
+account gmail
+auth on
+host smtp.gmail.com
+from ole.k.lien@gmail.com
+auth on
+tls on
+tls_trust_file /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt
+user ole.k.lien@gmail.com
+password ******
+port 587
+
+account default : gmail
+
+chmod 600 ~/.msmtprc
+
+#sudo apt-get install mailutils
+heirloom-mailx
+
+vim ~/.mailrc
+set sendmail="/usr/bin/msmtp"
+set message-sendmail-extra-arguments="-a gmail"
+
+mail -s "Subject" address@example.com

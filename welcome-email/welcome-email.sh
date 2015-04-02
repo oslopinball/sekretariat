@@ -5,6 +5,14 @@
 
 INPUT="person.txt"
 
+WHO="Ole Kristian Lien"
+
+if [[ `whoami` == "trenton" ]]; then
+    WHO="Trenton Schulz"
+fi
+
+echo "Sending emails as $WHO"
+
 #for LINE in $(cat person.txt); do
 cat $INPUT | while read LINE; do
 
@@ -67,7 +75,7 @@ Fødelsdato (år-måned-dag): $DOB
 Mobil: $CELLPHONE
 
 Mvh,
-Ole Kristian Lien, 
+$WHO,
 på vegne av Oslo Flipperspillklubbs sekretariat
 http://www.oslopinball.no/
 EOF

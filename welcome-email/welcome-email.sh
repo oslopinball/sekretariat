@@ -7,7 +7,7 @@ INPUT="person.txt"
 
 WHO="Ole Kristian Lien"
 
-if [[ `whoami` == "trenton" ]]; then
+if [[ `whoami` == "trenton" || `whoami` == "twschulz" ]]; then
     WHO="Trenton Schulz"
 fi
 

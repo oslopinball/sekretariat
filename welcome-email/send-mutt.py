@@ -13,6 +13,8 @@ def main():
         print "I need an ID (email file), exiting."
         return
 
+    sekretariatAddress = "sekretariat@oslopinball.no"
+    os.environ['REPLYTO'] = sekretariatAddress
     emailText = codecs.open("emails/" + sys.argv[1] + ".txt", 'r', 'utf-8').readlines()
     header = emailText[:6]
     subject = header[0][9:].strip()
@@ -22,7 +24,7 @@ def main():
     muttBody = codecs.open("emails/tmp.txt", 'w', 'utf-8')
     muttBody.write("".join(body))
     muttBody.close()
-    command = "mutt -c 'sekretariat@oslopinball.no' -s '%s' -a Informasjon.pdf vedtekter.pdf -- %s < emails/tmp.txt" % (subject, to)
+    command = "mutt -c '%s' -s '%s' -a Informasjon.pdf vedtekter.pdf -- %s < emails/tmp.txt" % (sekretariatAddress, subject, to)
 #    print command
     os.system(command)
 

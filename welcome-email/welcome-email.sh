@@ -32,6 +32,11 @@ echo "Writing email to: $ID"
 
 PAID=""
 
+# In case we got nothing as paid date, mark it as no pay date.
+if [[ "$PAIDDATE" == "" ]]; then
+    PAIDDATE="-"
+fi
+
 if [[ "$PAIDDATE" != "-" ]]; then
 	PAID="
 Du har allerede betalt kontigenten den $PAIDDATE, takk! :)

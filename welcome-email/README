@@ -31,7 +31,7 @@ Let's look at these in bits
 
 ### Export a copy of the members ###
 
-1. In the "Ny Medlemsliste" tab, choose File * Download As * Tab-separated values.
+1. In the "Medlemmer" tab, choose File * Download As * Tab-separated values.
 2. Open up this downloaded file and remove the members that already have received a message.
 3. Save the file.
 

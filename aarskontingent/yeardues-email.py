@@ -21,16 +21,24 @@ Paid2016Key = 25
 def checkPayment(paidField):
     return not (len(paidField) == 0 or paidField.isspace() or paidField == '-')
 
+def saneField(memberFields, key):
+    value = memberFields[key].decode('utf-8')
+    if len(value) == 0:
+        value = u'—'
+    return value
+
 def sendPaymentEmail(memberFields, who):
     pinid = memberFields[IdKey]
-    firstName = memberFields[FirstNameKey].decode('utf-8')
-    lastName = memberFields[LastNameKey].decode('utf-8')
-    tag = memberFields[TagKey].decode('utf-8')
-    address = memberFields[AddressKey].decode('utf-8')
-    postcode = memberFields[PostcodeKey].decode('utf-8')
-    city = memberFields[CityKey].decode('utf-8')
-    dob = memberFields[DobKey].decode('utf-8')
-    cell = memberFields[CellphoneKey].decode('utf-8')
+    firstName = saneField(memberFields, FirstNameKey)
+    lastName = saneField(memberFields, LastNameKey)
+    tag = saneField(memberFields, TagKey)
+    address = saneField(memberFields, AddressKey)
+    postcode = saneField(memberFields, PostcodeKey)
+    city = saneField(memberFields, CityKey)
+    dob = saneField(memberFields, DobKey)
+    cell = saneField(memberFields, CellphoneKey)
+    if len(cell) == 0:
+        cell = u'—'
     email = memberFields[EmailKey].decode('utf-8')
     year = 2016
 
@@ -43,7 +51,7 @@ Reply-to: sekretariat@oslopinball.no
 
 Hei {1},
 
-nå er det {2} og det er på tide å betale årskontingent for {2}.
+nå er det {2}, og det er tide å betale årskontingent for {2}.
 
 Årskontigent {2}
 =============

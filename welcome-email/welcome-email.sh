@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 # cat ~/msmtp.log | grep -v EX_OK
 # mars 15 19:58:40 host=smtp.gmail.com tls=on auth=on user=ole.k.lien@gmail.com from=ole.k.lien@gmail.com recipients=oyvind@lindahl.no,sekretariat@oslopinball.no mailsize=460025 smtpstatus=250 smtpmsg='250 2.0.0 OK 1426445920 dk5sm1711913lad.41 - gsmtp' exitcode=EX_OK
@@ -26,7 +26,7 @@ CITY=$(echo "$LINE" | awk -F'\t' '{print $8}')
 DOB=$(echo "$LINE" | awk -F'\t' '{print $9}')
 CELLPHONE=$(echo "$LINE" | awk -F'\t' '{print $12}')
 EMAIL=$(echo "$LINE" | awk -F'\t' '{print $13}')
-PAIDDATE=$(echo "$LINE" | awk -F'\t' '{print $16}') # trim
+PAIDDATE=$(echo "$LINE" | awk -F'\t' '{print $26}') # trim for 2016
 
 echo "Writing email to: $ID"
 
@@ -59,7 +59,7 @@ Ditt medlemsnummer er $ID.
 Vedlagt finner du to pdf-dokumenter med informasjon og vedtekter til foreningen.
 Hvis det er noe du lurer på, er det bare å svare på denne e-posten.
 
-Årskontigent 2015
+Årskontigent 2016
 =============
 Kontonummer: 1503.57.12779
 Kroner: 50,-

@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 
 # cat ~/msmtp.log | grep -v EX_OK
 # mars 15 19:58:40 host=smtp.gmail.com tls=on auth=on user=ole.k.lien@gmail.com from=ole.k.lien@gmail.com recipients=oyvind@lindahl.no,sekretariat@oslopinball.no mailsize=460025 smtpstatus=250 smtpmsg='250 2.0.0 OK 1426445920 dk5sm1711913lad.41 - gsmtp' exitcode=EX_OK
@@ -7,7 +7,7 @@ INPUT="person.txt"
 
 WHO="Ole Kristian Lien"
 
-if [[ `whoami` == "trenton" || `whoami` == "twschulz" ]]; then
+if [ `whoami` = "trenton" -o `whoami` = "twschulz" ]; then
     WHO="Trenton Schulz"
 fi
 
@@ -33,11 +33,11 @@ echo "Writing email to: $ID"
 PAID=""
 
 # In case we got nothing as paid date, mark it as no pay date.
-if [[ "$PAIDDATE" == "" ]]; then
+if [ "$PAIDDATE" = "" ]; then
     PAIDDATE="-"
 fi
 
-if [[ "$PAIDDATE" != "-" ]]; then
+if [ "$PAIDDATE" != "-" ]; then
 	PAID="
 Du har allerede betalt kontigenten den $PAIDDATE, takk! :)
 "

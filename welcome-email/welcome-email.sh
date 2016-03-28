@@ -79,7 +79,9 @@ Sted: $CITY
 Fødelsdato (år-måned-dag): $DOB
 Mobil: $CELLPHONE
 
-Mvh,
+Vennlig Hilsen,
+
+-- 
 $WHO,
 på vegne av Oslo Flipperspillklubbs sekretariat
 http://www.oslopinball.no/

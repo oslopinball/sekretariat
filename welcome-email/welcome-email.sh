@@ -76,7 +76,7 @@ TAG: $TAG
 Adresse: $ADDRESS
 Postnummer: $POSTCODE
 Sted: $CITY
-Fødelsdato (år-måned-dag): $DOB
+Fødseldato (år-måned-dag): $DOB
 Mobil: $CELLPHONE
 
 Vennlig Hilsen,
